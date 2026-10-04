@@ -1,0 +1,39 @@
+{
+	"schemaVersion": 1,
+	"id": "stun-slam-guider",
+	"version": "${version}",
+	"name": "Stun Slam Guider",
+	"description": "This is a mod that allows you to practice Stun Slams!",
+	"authors": [
+		"ItsGlace_"
+	],
+	"contact": {
+		"homepage": "https://www.youtube.com/@itsglace",
+		"sources": "https://github.com/FabricMC/fabric-example-mod",
+		"discord": "https://discord.gg/sUm49SrtfU"
+	},
+	"license": "MIT",
+	"icon": "assets/stun-slam-guider/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"client": [
+			"com.glace.client.StunSlamGuiderClient"
+		],
+		"modmenu": [
+			"com.glace.client.ModMenuIntegration"
+		]
+	},
+	"mixins": [
+		{
+			"config": "stun-slam-guider.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*",
+		"yet_another_config_lib_v3": ">=3.8.2+1.21.11-fabric"
+	}
+}
