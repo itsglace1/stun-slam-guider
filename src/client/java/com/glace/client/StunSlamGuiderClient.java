@@ -129,7 +129,7 @@ public class StunSlamGuiderClient implements ClientModInitializer {
 
 					if (result != null) {
 						if (StunSlamConfig.HANDLER.instance().showMessages) {
-							client.player.displayClientMessage(result, true);
+							client.player.sendOverlayMessage(result);
 						}
 						if(StunSlamConfig.HANDLER.instance().playSounds) {
 							client.player.playSound(resultSound, resultVolume, resultPitch);
