@@ -9,8 +9,8 @@
 	],
 	"contact": {
 		"homepage": "https://www.youtube.com/@itsglace",
-		"sources": "https://github.com/FabricMC/fabric-example-mod",
-		"discord": "https://discord.gg/sUm49SrtfU"
+		"sources": "https://github.com/itsglace1/stun-slam-guider",
+		"discord": "https://discord.gg/XvUuwRR8X"
 	},
 	"license": "MIT",
 	"icon": "assets/stun-slam-guider/icon.png",
@@ -30,7 +30,7 @@
 		}
 	],
 	"depends": {
-		"fabricloader": ">=0.19.5",
+		"fabricloader": ">=0.19.3",
 		"minecraft": "~26.2",
 		"java": ">=25",
 		"fabric-api": "*",
