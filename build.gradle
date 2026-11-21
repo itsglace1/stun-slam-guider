@@ -17,6 +17,7 @@ repositories {
 loom {
 	runs {
 		client {
+			vmArg "-Ddevauth.enabled=1"
 		}
 	}
 	splitEnvironmentSourceSets()
@@ -33,6 +34,8 @@ dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+	localRuntime 'net.litetex.mcm:dev-auth-neo:1.2.0'
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"

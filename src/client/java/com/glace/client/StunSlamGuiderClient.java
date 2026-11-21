@@ -1,12 +1,16 @@
 package com.glace.client;
 
+import com.mojang.blaze3d.platform.InputConstants;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.ItemTags;
@@ -48,6 +52,21 @@ public class StunSlamGuiderClient implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
+
+		KeyMapping.Category CATEGORY = KeyMapping.Category.register(
+				Identifier.fromNamespaceAndPath("stun-slam-guider", "main")
+		);
+
+		KeyMapping openPracticeKey = KeyMappingHelper.registerKeyMapping(
+				new KeyMapping(
+						"key.stun-slam-guider.practice_menu",
+						InputConstants.Type.KEYSYM,
+						InputConstants.KEY_K,
+						CATEGORY
+				));
+
+
+
 		StunSlamConfig.HANDLER.load();
 		AttackEntityCallback.EVENT.register((player, level, hand, entity, hitResult) -> {
 			if(!level.isClientSide()) {
@@ -116,10 +135,13 @@ public class StunSlamGuiderClient implements ClientModInitializer {
 				}
 				return InteractionResult.PASS;
 		});
-
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			if(client.player == null) {
 				return;
+			}
+
+			while (openPracticeKey.consumeClick()) {
+				client.gui.setScreen(new PracticeScreen());
 			}
 
 			if(axeSwung || result != null) {
@@ -144,6 +166,6 @@ public class StunSlamGuiderClient implements ClientModInitializer {
 				}
 			}
 		});
-
 	}
+
 }
