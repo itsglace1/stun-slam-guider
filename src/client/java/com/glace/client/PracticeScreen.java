@@ -20,7 +20,8 @@ public class PracticeScreen extends Screen {
         super.extractRenderState(graphics, mouseX, mouseY, a);
         drawTexture(graphics,GUI_BACKGROUND, 10, 10, 141, 166);
         if (this.sprite != null) {
-            this.sprite.draw(graphics, this.width / 2 - 28, this.height / 2 - 32, 56, 64);
+            this.sprite.draw(graphics, 10, 10, 56, 64);
+            this.sprite.drawParts(graphics, 80, 10, 2);
         }
         drawTexture(graphics,GUI_TEXTURE, 0, 0, 290, 208);
     }
