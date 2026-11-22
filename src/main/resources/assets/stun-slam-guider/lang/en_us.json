@@ -4,5 +4,7 @@
 
   "toast.stun-slam-guider.title": "Stun Slam Guider",
   "toast.stun-slam-guider.skin_size": "This size is not supported.",
-  "toast.stun-slam-guider.skin_type": "Couldn't read this skin."
+  "toast.stun-slam-guider.skin_type": "Couldn't read this skin.",
+  "toast.stun-slam-guider.tools_same_slot": "You can't place both tools in the same slot!",
+  "toast.stun-slam-guider.out_of_range": "You can't place tools outside of the hotbars range!"
 }

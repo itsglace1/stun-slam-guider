@@ -153,8 +153,9 @@ public class StunSlamGuiderClient implements ClientModInitializer {
 						if (StunSlamConfig.HANDLER.instance().showMessages) {
 							client.player.sendOverlayMessage(result);
 						}
-						if(StunSlamConfig.HANDLER.instance().playSounds) {
-							client.player.playSound(resultSound, resultVolume, resultPitch);
+							int volume = StunSlamConfig.HANDLER.instance().soundVolume;
+						if(volume > 0) {
+							client.player.playSound(resultSound,resultVolume * volume / 50f, resultPitch);
 						}
 					}
 

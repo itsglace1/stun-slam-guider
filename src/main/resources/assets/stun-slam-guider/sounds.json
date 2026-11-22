@@ -1,0 +1,5 @@
+{
+  "hotbar_scroll": {
+    "sounds": ["stun-slam-guider:gui/scroll"]
+  }
+}
