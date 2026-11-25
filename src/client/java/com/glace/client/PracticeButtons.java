@@ -8,23 +8,17 @@ public class PracticeButtons {
        //Lyrics comin' at you at supersonic speed (J.J. Fad)
     public static final int EASY_X = 166;
     public static final int EASY_Y = 35;
-    public static final int EASY_W = 20;
-    public static final int EASY_H = 20;
+    public static final int DIFFICULTY_W = 20;
+    public static final int DIFFICULTY_H = 20;
 
     public static final int MEDIUM_X = 196;
     public static final int MEDIUM_Y = 35;
-    public static final int MEDIUM_W = 20;
-    public static final int MEDIUM_H = 20;
 
     public static final int HARD_X = 226;
     public static final int HARD_Y = 35;
-    public static final int HARD_W = 20;
-    public static final int HARD_H = 20;
 
     public static final int INSANE_X = 256;
     public static final int INSANE_Y = 35;
-    public static final int INSANE_W = 20;
-    public static final int INSANE_H = 20;
 
     public static final int START_X = 165;
     public static final int START_Y = 180;
